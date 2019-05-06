@@ -8,7 +8,7 @@ AWS.config.update({
 
 const ses = new AWS.SES({ apiVersion: '2010-12-01' });
 
-const sendEmail = (to, subject, message, from) => {
+const sendEmail = (to, subject, message, from, callback) => {
   const params = {
     Destination: {
       ToAddresses: [to]
@@ -30,12 +30,7 @@ const sendEmail = (to, subject, message, from) => {
   };
   
   ses.sendEmail(params, (error, data) => {
-    if (error) {
-      console.log(error);
-      return false;
-    }
-    console.log(data);
-    return true;
+    callback(error, data);
   });
 };
 
