@@ -32,9 +32,12 @@ const sendEmail = (to, subject, message, from) => {
 
   ses.sendEmail(params, (error, data) => {
     if (error) {
+      // eslint-disable-next-line
       console.log(error);
       return false;
     }
+
+    // eslint-disable-next-line
     console.log(data);
     return true;
   });

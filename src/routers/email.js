@@ -4,8 +4,16 @@ const cors = require('cors');
 const router = express.Router();
 const sendEmail = require('../utils/ses-client');
 
+const whitelist = ['http://localhost:3000', 'http://dev.heidihoelting.com', 'https://heidihoelting.com'];
+
 const corsOptions = {
-  origin: 'http://localhost:3000',
+  origin: function(origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 

@@ -29,4 +29,5 @@ app.get('/', (req, res) => {
   res.render('index', { title: 'Joel Hoelting API' });
 });
 
+// eslint-disable-next-line
 app.listen(port, () => console.log(`Application is listening on port ${port}!`));
