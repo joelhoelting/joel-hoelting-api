@@ -2,12 +2,13 @@ const express = require('express');
 const cors = require('cors');
 
 const router = express.Router();
-const sendEmail = require('../utils/ses-client');
+const sendEmail = require('../../utils/aws/ses-client');
 
 const whitelist = ['http://localhost:3000', 'http://dev.heidihoelting.com', 'https://heidihoelting.com'];
 
 const corsOptions = {
   origin: function(origin, callback) {
+    console.log('origin', origin);
     if (whitelist.indexOf(origin) !== -1) {
       callback(null, true);
     } else {
@@ -17,7 +18,8 @@ const corsOptions = {
   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
-router.post('/email/send', cors(corsOptions), (req, res) => {
+router.post('/send-ses-email', cors(corsOptions), (req, res) => {
+  console.log('this triggered');
   let { to, subject, message, from } = req.body;
   from = `${from} <joelhoeltingapi@gmail.com>`;
 

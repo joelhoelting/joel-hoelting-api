@@ -12,7 +12,9 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(emailRouter);
+
+// Routes
+app.use('/email', emailRouter);
 
 // Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public');
