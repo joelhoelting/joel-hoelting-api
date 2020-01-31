@@ -4,7 +4,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 require('dotenv').config();
 
-const emailRouter = require('./routers/email');
+const awsRouter = require('./routers/aws');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Routes
-app.use('/email', emailRouter);
+app.use('/aws', awsRouter);
 
 // Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public');
@@ -29,10 +29,6 @@ app.use(express.static(publicDirectoryPath));
 
 app.get('/', (req, res) => {
   res.render('index', { title: 'Joel Hoelting API' });
-});
-
-app.get('/test', (req, res) => {
-  res.send('This is a test');
 });
 
 // eslint-disable-next-line
