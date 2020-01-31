@@ -31,7 +31,7 @@ app.get('/', (req, res) => {
   res.render('index', { title: 'Joel Hoelting API' });
 });
 
-app.get('test', (req, res) => {
+app.get('/test', (req, res) => {
   res.send('This is a test');
 });
 
