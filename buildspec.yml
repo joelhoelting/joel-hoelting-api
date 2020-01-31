@@ -10,7 +10,7 @@ phases:
       - |
         if [ $CODEBUILD_BUILD_SUCCEEDING -eq 1 ]; then
           echo "AWS Codebuild success on branch ${BRANCH_NAME} on $(TZ=":US/Eastern" date)"
-          aws sns publish --phone-number ${PHONE_NUMBER} --message "Build success. ${EB_NAME}; ${BRANCH_NAME} branch; on $(TZ=":US/Eastern" date)"
+          aws sns publish --phone-number ${PHONE_NUMBER} --message "AWS CodeBuild success. ${EB_NAME}; ${BRANCH_NAME} branch; on $(TZ=":US/Eastern" date)"
         else
           echo "Build/Deploy failure"
         fi
