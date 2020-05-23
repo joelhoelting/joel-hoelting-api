@@ -32,4 +32,4 @@ app.get('/', (req, res) => {
 });
 
 // eslint-disable-next-line
-app.listen(port, () => console.log(`Application is listening on port ${port}!`));
+app.listen(port, () => console.log(`Application is listening on port ${port}.`));
