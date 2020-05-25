@@ -24,6 +24,8 @@ const corsOptions = {
   optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
+emailRouter.options('send-ses-email', cors(corsOptions));
+
 emailRouter.post('/send-ses-email', cors(corsOptions), (req, res) => {
   let { to, subject, message, from } = req.body;
   from = `${from} <joelhoeltingapi@gmail.com>`;
