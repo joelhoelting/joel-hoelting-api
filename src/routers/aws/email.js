@@ -28,7 +28,7 @@ emailRouter.options('send-ses-email', cors(corsOptions));
 
 emailRouter.post('/send-ses-email', cors(corsOptions), (req, res) => {
   let { to, subject, message, from } = req.body;
-  from = `${from} <joelhoeltingapi@gmail.com>`;
+  from = `${from} <joelhoeltingapi@joelhoelting.com>`;
 
   sendEmail(to, subject, message, from, (error, data) => {
     console.log(error, data);
