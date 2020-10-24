@@ -28,7 +28,7 @@ app.set('views', viewsPath);
 app.use(express.static(publicDirectoryPath));
 
 app.get('/', (req, res) => {
-  res.render('index', { title: 'Joel Hoelting APIzzzzz' });
+  res.render('index', { title: 'Joel Hoelting APIsomething' });
 });
 
 // eslint-disable-next-line
