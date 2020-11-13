@@ -1,3 +1,4 @@
 #!/bin/bash
 
-echo "Does this work?"
+cd /home/ubuntu/Dev/joel-hoelting-api
+sudo rm -rf !(".env")
