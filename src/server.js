@@ -28,7 +28,7 @@ app.set('views', viewsPath);
 app.use(express.static(publicDirectoryPath));
 
 app.get('/', (req, res) => {
-  res.render('index', { title: 'Test Application' });
+  res.render('index', { title: 'Testing Application' });
 });
 
 // eslint-disable-next-line
