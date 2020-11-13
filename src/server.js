@@ -28,7 +28,7 @@ app.set('views', viewsPath);
 app.use(express.static(publicDirectoryPath));
 
 app.get('/', (req, res) => {
-  res.render('index', { title: 'Testing Application' });
+  res.render('index', { title: 'Joel Hoelting API' });
 });
 
 // eslint-disable-next-line
