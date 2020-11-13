@@ -12,6 +12,6 @@ permissions:
     group: ubuntu
 hooks:
   BeforeInstall:
-    - location: scripts/clear.sh
+    - location: scripts/happy.sh
       timeout: 300
       runas: ubuntu
