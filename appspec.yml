@@ -9,9 +9,8 @@ permissions:
     pattern: '**'
     owner: ubuntu
     group: ubuntu
-
-hooks:
-  BeforeInstall:
-    - location: scripts/beforeinstall.sh
-      timeout: 300
-      # runas: ubuntu
+# hooks:
+#   BeforeInstall:
+#     - location: scripts/beforeinstall.sh
+#       timeout: 300
+#       runas: ubuntu
