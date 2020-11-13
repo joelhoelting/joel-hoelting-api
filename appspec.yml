@@ -3,9 +3,10 @@ os: linux
 files:
   - source: /
     destination: /home/ubuntu/Dev/joel-hoelting-api
+    runas: ubuntu
 
 permissions:
   - object: /
     pattern: '**'
-    owner: ubuntu
-    group: ubuntu
+    owner: root
+    group: root
