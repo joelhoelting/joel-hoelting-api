@@ -11,7 +11,7 @@ permissions:
     group: ubuntu
 
 hooks:
-  BeforeInstall:
+  ApplicationStop:
     - location: scripts/beforeinstall.sh
       timeout: 300
       runas: ubuntu
