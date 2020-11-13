@@ -3,15 +3,15 @@ os: linux
 files:
   - source: /
     destination: /home/ubuntu/Dev/joel-hoelting-api
-    runas: ubuntu
 
 permissions:
   - object: /
     pattern: '**'
     owner: ubuntu
     group: ubuntu
-# hooks:
-#   BeforeInstall:
-#     - location: scripts/before
-#       timeout: 300
-#       runas: 777
+
+hooks:
+  BeforeInstall:
+    - location: scripts/beforeinstall.sh
+      timeout: 300
+      runas: ubuntu
