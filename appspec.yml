@@ -3,8 +3,8 @@ os: linux
 files:
   - source: /
     destination: /home/ubuntu/Dev/joel-hoelting-api
-hooks:
-  BeforeInstall:
-    - location: scripts/before
-      timeout: 300
-      runas: 777
+# hooks:
+#   BeforeInstall:
+#     - location: scripts/before
+#       timeout: 300
+#       runas: 777
