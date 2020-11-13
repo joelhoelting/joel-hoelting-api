@@ -4,6 +4,12 @@ files:
   - source: /
     destination: /home/ubuntu/Dev/joel-hoelting-api
     runas: ubuntu
+
+permissions:
+- object: /
+   pattern: "**"
+   owner: ubuntu
+   group: ubuntu
 # hooks:
 #   BeforeInstall:
 #     - location: scripts/before
