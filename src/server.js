@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 require('dotenv').config();
 
 const awsRouter = require('./routers/aws');
+const shopifyRouter = require('./routers/shopify');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -15,6 +16,7 @@ app.use(bodyParser.json());
 
 // Routes
 app.use('/aws', awsRouter);
+app.use('/shopify/:store', shopifyRouter);
 
 // Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public');

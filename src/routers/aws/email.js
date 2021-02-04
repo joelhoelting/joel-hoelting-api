@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 
 const emailRouter = express.Router();
-const sendEmail = require('../../utils/aws/ses-client');
+const sendEmail = require('../../utils/aws/ses_client');
 
 const whitelist = [
   'http://localhost:3000',
